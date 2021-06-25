@@ -17,12 +17,13 @@
     {% endfor %}
     <div class="container">
         {% for product in prods %}
-        <div class="gallery">
-        <a target="_blank" href="https://via.placeholder.com">
-          <img src="https://via.placeholder.com/600x400" alt="place_holder" width="600" height="400">
-        </a>
-        <div class="desc">{{ product.description}}</div>
-      </div>
+        <div class="card" style="float:left;">
+  <img src="https://via.placeholder.com/150" alt="Denim Jeans" style="width:100%">
+  <h1> {{ product.name }}</h1>
+  <p class="price">${{ product.price }}</p>
+  <p class="description">{{ product.description }}</p>
+  <p><button>Add to Cart</button></p>
+</div>
     {% endfor %}
     </div>
 

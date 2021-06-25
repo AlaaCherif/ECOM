@@ -13,11 +13,31 @@ class AddType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('description')
-            ->add('price')
-            ->add('image')
-            ->add('submit',SubmitType::class)
+            ->add('name',null,[
+                'attr'=>[
+                    'style'=>'margin:5px'
+                ]
+            ])
+            ->add('description',null,[
+                'attr'=>[
+                    'style'=>'margin:5px'
+                ]
+            ])
+            ->add('price',null,[
+                'attr'=>[
+                    'style'=>'margin:5px'
+                ]
+            ])
+            ->add('image',null,[
+                'attr'=>[
+                    'style'=>'margin:5px'
+                ]
+            ])
+            ->add('submit',SubmitType::class,[
+                'attr'=>[
+                    'style'=>'margin:5px'
+                ]
+            ])
         ;
     }
 
