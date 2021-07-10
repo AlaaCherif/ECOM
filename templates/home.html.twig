@@ -1,30 +1,7 @@
-{% extends 'base.html.twig' %}
-{% block title %} Home {% endblock %}
-{% block stylesheets %}
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="gallery.css">
-{% endblock %}
-{% block form %}
-{{ form(form,{'label':false}) }}
-{%  endblock %}
-
-
-{% block body %}
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-dismissible alert-success">
-            {{ message }}
-        </div>
-    {% endfor %}
-    <div class="container">
-        {% for product in prods %}
-        <div class="card" style="float:left;">
-  <img src="https://via.placeholder.com/150" alt="Denim Jeans" style="width:100%">
-  <h1> {{ product.name }}</h1>
-  <p class="price">${{ product.price }}</p>
-  <p class="description">{{ product.description }}</p>
-  <p><button>Add to Cart</button></p>
+{% extends 'default.html.twig'%}
+{% block intro%}
+<div class="container">
+    <h1>Trending now</h1>
+    <p class="lead">Take a look at our best reviewed products</p>
 </div>
-    {% endfor %}
-    </div>
-
-{%  endblock %}
+{% endblock %}

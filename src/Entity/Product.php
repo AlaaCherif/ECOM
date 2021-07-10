@@ -37,6 +37,11 @@ class Product
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $recommended;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Product
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getRecommended(): ?bool
+    {
+        return $this->recommended;
+    }
+
+    public function setRecommended(?bool $recommended): self
+    {
+        $this->recommended = $recommended;
 
         return $this;
     }

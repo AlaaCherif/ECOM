@@ -21,16 +21,14 @@ class HomeController extends AbstractController
         $form=$this->createFormBuilder(null)
             ->add('Search',TextType::class,[
                 'attr'=>[
-                    'class'=>'form-control me-sm-2'
+                    'class'=>'form-control me-sm-2',
+                    'placeholder'=>'Search Procuts'
                 ]
-                ,'label'=>''
             ])
-            ->add('search',SubmitType::class,[
+            ->add('submit',SubmitType::class,[
                 'attr'=>[
                     'class'=>'btn btn-secondary my-2 my-sm-0',
-                    'color'=>'#78c2ad',
-                    'background-color'=>'white',
-                    'border-color'=>'#78c2ad'
+                    
                 ]
             ])
             ->getForm();
@@ -46,7 +44,7 @@ class HomeController extends AbstractController
             ]);
         }
 
-        $products=$repo->findAll();
+        $products=$repo->findBy(['recommended'=>'true']);
         return $this->render('home.html.twig',[
             'prods'=>$products,
             'form'=>$form->createView()

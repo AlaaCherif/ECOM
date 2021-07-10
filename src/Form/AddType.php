@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,27 +16,37 @@ class AddType extends AbstractType
         $builder
             ->add('name',null,[
                 'attr'=>[
-                    'style'=>'margin:5px'
+                    'style'=>'margin:5px',
+                    'class'=>'form-control'
                 ]
             ])
             ->add('description',null,[
                 'attr'=>[
-                    'style'=>'margin:5px'
+                    'style'=>'margin:5px',
+                    'class'=>'form-control'
                 ]
             ])
             ->add('price',null,[
                 'attr'=>[
-                    'style'=>'margin:5px'
+                    'style'=>'margin:5px',
+                    'class'=>'form-control'
                 ]
             ])
             ->add('image',null,[
                 'attr'=>[
-                    'style'=>'margin:5px'
+                    'style'=>'margin:5px',
+                    'class'=>'form-control'
+                ]
+            ])
+            ->add('recommended',CheckboxType::class,[
+                'attr'=>[
+                    'class'=>'form-check-input'
                 ]
             ])
             ->add('submit',SubmitType::class,[
                 'attr'=>[
-                    'style'=>'margin:5px'
+                    'style'=>'margin:5px',
+                    'class'=>'btn btn-primary'
                 ]
             ])
         ;
