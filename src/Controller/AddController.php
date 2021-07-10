@@ -11,7 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Controller\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\Extension\HttpFoundation\HttpFoundationRequestHandler;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 class AddController extends AbstractController
 {
@@ -23,6 +26,25 @@ class AddController extends AbstractController
         $view = $form->createView();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $image=$form->get('image')->getData();
+            if($image)
+            {
+                $originalName=pathinfo($image->getClientOriginalName(),PATHINFO_FILENAME);
+                $newName=md5(uniqid()).'.'.$image->guessExtension();
+                try
+                {
+                    $image->move(
+                        $this->getParameter('uploads_directory'),
+                        $newName
+                    );
+                }
+                catch(FileException $e)
+                {   
+                    //do nothing
+                    echo $e;
+                }
+                $prod->setImage($newName);
+            }
             $prod=$form->getData();
             $em->persist($prod);
             $em->flush();

@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{product.name}}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="{{ asset('style.css')}}">
+<link rel="stylesheet" href="{{ asset('gallery.css')}}">
 {% endblock%}
 {% block body %}
+<div class="container">
 {{product.name}}
 {{product.price}}
+</div>
 {% endblock %}

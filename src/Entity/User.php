@@ -47,6 +47,11 @@ class User
      */
     private $address;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $Administrator;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class User
     public function setAddress(?string $address): self
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    public function getAdministrator(): ?bool
+    {
+        return $this->Administrator;
+    }
+
+    public function setAdministrator(?bool $Administrator): self
+    {
+        $this->Administrator = $Administrator;
 
         return $this;
     }

@@ -5,9 +5,9 @@
 <link rel="stylesheet" href="gallery.css">
 {% endblock %}
 {% block form %}
-{# {{ form_row(form.Search,{'label':false}) }}
-{{ form_row(form.submit)}} #}
+<form class="d-flex">
 {{ form(form)}}
+</form>
 {%  endblock %}
 {% block body %}
     {% for message in app.flashes('success') %}
@@ -19,7 +19,7 @@
     <div class="container" style="overflow: auto;">
         {% for product in prods %}
         <div class="card" style="float:left; ">
-  <a href="/{{ product.id }}"><img src="https://via.placeholder.com/150" alt="Denim Jeans" style="width:100%"></a>
+  <a href="/product/{{ product.id }}"><img src="{{ asset('images/') ~ product.image }}" alt="." style="width:100%"></a>
   <h1> {{ product.name }}</h1>
   <p class="price">${{ product.price }}</p>
   <p class="description">{{ product.description }}</p>

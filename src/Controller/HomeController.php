@@ -22,12 +22,15 @@ class HomeController extends AbstractController
             ->add('Search',TextType::class,[
                 'attr'=>[
                     'class'=>'form-control me-sm-2',
-                    'placeholder'=>'Search Procuts'
-                ]
+                    'placeholder'=>'Search Procuts',
+                    'type'=>'text'
+                ],
+                'label'=>false
             ])
             ->add('submit',SubmitType::class,[
                 'attr'=>[
                     'class'=>'btn btn-secondary my-2 my-sm-0',
+                    'float'=>'right'
                     
                 ]
             ])

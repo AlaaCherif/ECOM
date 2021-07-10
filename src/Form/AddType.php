@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -32,11 +33,13 @@ class AddType extends AbstractType
                     'class'=>'form-control'
                 ]
             ])
-            ->add('image',null,[
+            ->add('image',FileType::class,[
                 'attr'=>[
                     'style'=>'margin:5px',
                     'class'=>'form-control'
-                ]
+                ],
+                'mapped'=>false,
+                'required'=>true
             ])
             ->add('recommended',CheckboxType::class,[
                 'attr'=>[

@@ -48,7 +48,7 @@ class ProductController extends AbstractController
     }
 
 
-    #[Route('/{id<\d+>}', name: 'product')]
+    #[Route('/product/{id<\d+>}', name: 'product')]
     public function getProd($id): Response
     {
         $repo=$this->getDoctrine()->getRepository(Product::class);
