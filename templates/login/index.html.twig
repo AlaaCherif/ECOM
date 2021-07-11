@@ -1,19 +1,4 @@
 {% extends 'base.html.twig'%}
-{% block intro %}
-<div class="container">
-    <h1>Create Account</h1>
-<p class="lead">We will never share your personnal information with anyone.</p>
-</div>
-{% endblock %}
-
 {% block body %}
-
-<div class="container">
-    {{ form_start(form) }}
-    <div class="">
-        {{ form_errors(form) }}
-    </div>
-    {{ form_end(form) }}
-</div>
-
+{{ username }}
 {% endblock %}
