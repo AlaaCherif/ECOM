@@ -3,7 +3,8 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<form method="post">
+
+<form class ="container"method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -15,6 +16,7 @@
     {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <p class="lead"></p>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     <label for="inputPassword">Password</label>
@@ -35,8 +37,11 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button style="margin-top: 5px" class="btn btn-lg btn-primary" type="submit">
         Sign in
     </button>
 </form>
+<div class="container">
+<a href="/signup">Don't have an account ? Click to create a new one</a>
+</div>
 {% endblock %}

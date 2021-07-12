@@ -44,7 +44,8 @@ class AddType extends AbstractType
             ->add('recommended',CheckboxType::class,[
                 'attr'=>[
                     'class'=>'form-check-input'
-                ]
+                ],
+                'required'=>false
             ])
             ->add('submit',SubmitType::class,[
                 'attr'=>[
