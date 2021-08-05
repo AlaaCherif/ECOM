@@ -16,10 +16,10 @@
 <strong>Well done!  </strong>{{ message }}
 </div>
     {% endfor %}
-    <div class="container" style="overflow: auto;">
+    <div class="container" style="overflow: auto; ">
         {% for product in prods %}
         <div class="card" style="float:left; ">
-  <a href="/product/{{ product.id }}"><img src="{{ asset('images/') ~ product.image }}" alt="." style="width:100%"></a>
+  <a href="/product/{{ product.id }}"><img src="{{ asset('images/') ~ product.image }}" alt="." style="width:100%"; height="150px"></a>
   <h1> {{ product.name }}</h1>
   <p class="price">${{ product.price }}</p>
   <p class="description">{{ product.description }}</p>
